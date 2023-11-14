@@ -1,0 +1,43 @@
+import React from 'react';
+import Imagehero from '../assets/hero.png';
+import HomeCard from '../components/HomeCard';
+
+import VetementImg from '../assets/HomeImages/vetements.png';
+import ConfiserieImg from '../assets/HomeImages/confiserie.jpg';
+import ChaussuresImg from '../assets/HomeImages/chaussures.jpg';
+import ParfumImg from '../assets/HomeImages/parfums.jpg';
+import MaquillageImg from '../assets/HomeImages/maquillage.jpg';
+
+const Home = () => {
+  const data = [
+    { text: "Vêtements", image: VetementImg },
+    { text: "Confiseries", image: ConfiserieImg },
+    { text: "Chaussures", image: ChaussuresImg },
+    { text: "Parfums", image: ParfumImg },
+    { text: "Maquillage", image: MaquillageImg },
+  ];
+
+  return (
+    <div className="text-white">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="col-span-2 md:col-span-1">
+          <h1 className="md:text-4xl text-3xl font-bold mb-2">Explorez l'Élégance, Adoptez la Commodité.</h1>
+          <p className="text-gray-200">
+            Découvrez une expérience de shopping en ligne exceptionnelle où le style rencontre la simplicité. Parcourez notre collection exclusive et offrez-vous le luxe de la facilité, car chaque clic devrait être une découverte.
+          </p>
+        </div>
+        <div className="md:hidden col-span-2 md:col-span-1 flex items-center justify-center">
+          <img src={Imagehero} alt="Description de l'image" className="w-full object-cover" />
+        </div>
+      </div>
+
+      <div className="flex flex-wrap justify-center items-center flex-row">
+        {data.map((item, index) => (
+          <HomeCard key={index} backgroundImage={item.image} buttonText={item.text} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Home;

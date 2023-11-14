@@ -1,11 +1,20 @@
 import React from "react"
 import Navbar from "./components/Navbar"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
+import Products from './pages/Products';
 
 function App() {
   return (
-    <div>
-     <Navbar/>
-    </div>
+    <BrowserRouter>
+      <Navbar/>
+      <div className="px-8">
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/produits" element={<Products/>}/>
+      </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 

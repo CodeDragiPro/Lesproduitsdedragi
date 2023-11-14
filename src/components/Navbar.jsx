@@ -10,14 +10,15 @@ const Navbar = () => {
 
   return (
     <nav className="p-4 flex justify-between items-center relative text-white">
-     <div className='flex items-center'>
+      <a href='/' className='flex items-center'>
         <img src={logo} className='w-10' />
-        <h1>Les produits de dragi</h1>
-     </div>
+        <h1>Dragi</h1>
+      </a>
+    
      
       <div className="hidden md:flex space-x-4">
-        <a href="#">Accueil</a>
-        <a href="#">Produits</a>
+        <a href="/">Accueil</a>
+        <a href="/produits">Produits</a>
         <a href="#">À propos</a>
         <a href="#">Contact</a>
         <a href="#">Connexion</a>
@@ -33,7 +34,7 @@ const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-primary flex flex-col items-center justify-center">
+        <div className="md:hidden fixed inset-0 bg-primary flex flex-col items-center justify-center z-50">
           <div className="absolute top-0 right-0 mt-4 mr-4">
             <button onClick={toggleMobileMenu} className="focus:outline-none">
               <FaTimes size={32} />
@@ -41,8 +42,8 @@ const Navbar = () => {
           </div>
 
           <div className="text-center space-y-4 flex flex-col items-center">
-            <a href="#" className="block">Accueil</a>
-            <a href="#" className="block">Produits</a>
+            <a href="/" className="block">Accueil</a>
+            <a href="/produits" className="block">Produits</a>
             <a href="#" className="block">À propos</a>
             <a href="#" className="block">Contact</a>
             <a href="#" className="block">Connexion</a>
